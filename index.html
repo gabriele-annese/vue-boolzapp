@@ -68,12 +68,13 @@
             </div>
             <!-- contact-bar -->
             <div class="contacts-bar">
-                <ul class="contact">
-                    <li class="img-profile">
-                        <img src="./img/avatar_1.jpg" alt="">
+                <ul  v-for= "item in contacts"
+                class="contact">
+                    <li  class="img-profile">
+                        <img :src="`./img/avatar${item.avatar}.jpg`" alt="">
                     </li>
                     <li>
-                        <h3>Michele</h3>
+                        <h3>{{item.name}}</h3>
                     </li>
                 </ul>
             </div>
