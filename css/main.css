@@ -4,6 +4,11 @@
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
 }
+
+ul{
+   list-style: none;
+}
+
 /* utility */
 .box-debug{
     height: 50px;
