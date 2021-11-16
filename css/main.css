@@ -19,6 +19,12 @@
     cursor: pointer;
 }
 
+.icon-f{
+    color: #777e82;
+    font-size: 30px;
+    cursor: pointer;
+}
+
 
 body{
     height: 100vh;
@@ -182,6 +188,7 @@ body{
     width: 60%;
     flex-grow: 1;
    background-image: url(/img/mine.jpg);
+   position: relative;
 }
 
 .main-header{
@@ -250,7 +257,38 @@ body{
 .data{
     font-size: 10px;
     position: absolute;
-    bottom: 0;
+    bottom: 2px;
     right: 10px;
     color: #c1c6c3;
 }
+
+/* footer main */
+
+.main-footer{
+    padding: 15px 15px;
+    background-color: #f4f0ed;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.main-footer .input-message{
+    width: 80%;
+    padding: 10px 8px;
+    outline: none;
+    border: 0;
+    border-radius: 8px;
+}
+
+.input-message:focus{
+    border: 1px solid #000;
+}
+
+.input-message::placeholder{
+    color: lightgray;
+} 
