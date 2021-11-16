@@ -165,10 +165,92 @@ body{
     border: 2px solid #000;
 }
 
+.contact {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    background-color: #fff;
+    border-bottom: 2px solid #ccc ;
+}
+
+.contact h3{
+    margin-left: 10px;
+}
+
 /* mmain-content */
 .main{
     width: 60%;
     flex-grow: 1;
-    background-color: aqua;
+   background-image: url(/img/mine.jpg);
 }
 
+.main-header{
+    display: flex;
+    align-items: center;
+    background-color: #ededed;
+    padding: 10px 8px;
+    position: relative;
+}
+
+.main-header .name-main{
+    margin-left: 30px;
+}
+.main-header .items-main{
+    position: absolute;
+    right: 10px;
+    justify-content: flex-end;
+}
+
+.items-main .icon{
+ padding: 0 5px;
+}
+
+.main-text span{
+    color: #777e82;
+}
+
+.message-ctn{
+    display: flex;
+}
+
+
+.right-message{
+    align-self: flex-end;
+    width: 50%;
+}
+
+.left-message{
+    align-self: flex-start;
+    width: 50%;
+}
+
+.message{
+    width: 70%;
+    height: 50px;
+    padding: 10px 10px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 13px;
+    font-size: 14px;
+    position: relative;
+}
+
+.user{
+    margin-left: 30px;
+    margin-top: 80px;
+}
+
+
+.m-contact{
+    margin-top: 20px;
+    background-color: #ddfabf;
+}
+
+.data{
+    font-size: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    color: #c1c6c3;
+}
