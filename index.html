@@ -25,12 +25,12 @@
             <!-- header -->
             <div class="side-header">
                 <div class="img-profile">
-                    <img src="./img/avatar_io.jpg" alt="">
+                    <img :src="`./img/avatar${user.avatar}.jpg`" alt="">
                 </div>
                 <div class="header-content">
                     <h3 
                         class="name">
-                        Nome Utente
+                        {{user.name}}
                     </h3>
                     <div class="items">
                         <i class="fas fa-circle-notch icon"></i>
