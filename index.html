@@ -106,7 +106,7 @@
 
             <div class="main-footer">
                 <i class="far fa-smile icon-f"></i>
-                <input @keyup.enter = "sendMessage();" v-model ="newmessage"
+                <input @keyup.enter = "sendMessage(); sendBot()" v-model ="newmessage"
                 class="input-message"
                 type="text"
                 placeholder="Scrivi un nuovo messaggio"
@@ -117,6 +117,8 @@
     </div>
 
     <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/locale/it.js"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>

@@ -97,13 +97,24 @@ const app = new Vue({
             this.accountIndex = index
             console.log(accountIndex)
         },
+         //**************//
         sendMessage(){
             this.contacts[this.accountIndex].messages.push({
                 text: this.newmessage,
                 status: 'sent',
-                date : "10/01/2020 15:30:55"
+                date : dayjs().format('DD/MM/YYYY HH:mm:ss')
             });
             this.newmessage = "";
-        }
+        },
+        //**************//
+        sendBot(){
+            setTimeout(()=> {
+                this.contacts[this.accountIndex].messages.push({
+                    text: 'perfetto',
+                    status: 'received',
+                    date : dayjs().format('DD/MM/YYYY HH:mm:ss')
+                },);
+            },1000)
+         },
     },
 })
