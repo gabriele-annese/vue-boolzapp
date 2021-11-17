@@ -229,21 +229,13 @@ body{
 
 .message-ctn{
     display: flex;
-}
-
-
-.right-message{
-    align-self: flex-end;
-    width: 50%;
-}
-
-.left-message{
-    align-self: flex-start;
-    width: 50%;
+    flex-direction: column;
+    width: 100%;
 }
 
 .message{
-    width: 70%;
+    margin: 25px 10px;
+    width: 50%;
     height: 50px;
     padding: 10px 10px;
     background-color: #fff;
@@ -254,15 +246,13 @@ body{
     position: relative;
 }
 
-.user{
-    margin-left: 30px;
-    margin-top: 80px;
+.message.sent {
+    align-self: flex-end;
+    background-color: #ddfabf;
 }
 
-
-.m-contact{
-    margin-top: 20px;
-    background-color: #ddfabf;
+.message.received{
+    align-self: flex-start;
 }
 
 .data{

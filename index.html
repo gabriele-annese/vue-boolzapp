@@ -68,13 +68,13 @@
             </div>
             <!-- contact-bar -->
             <div class="contacts-bar">
-                <ul  v-for= "item in contacts"
+                <ul  v-for= "(contact, index) in contacts" @click="genAccount(index)"
                 class="contact">
                     <li  class="img-profile">
-                        <img :src="`./img/avatar${item.avatar}.jpg`" alt="">
+                        <img :src="`./img/avatar${contacts[index].avatar}.jpg`" alt="">
                     </li>
                     <li>
-                        <h3>{{item.name}}</h3>
+                        <h3>{{contacts[index].name}}</h3>
                     </li>
                 </ul>
             </div>
@@ -82,12 +82,13 @@
         <!-- right -->
         <section class="main">
             <div class="main-header">
-                <div class="img-profile">
-                    <img src="/img/avatar_1.jpg" alt="">
+                <div v-for = "contacts.img"
+                    class="img-profile ">
+                    <img  :src="`./img/avatar${contacts[accountIndex].avatar}.jpg`" alt="">
                 </div>
                 <div class="name-main">
-                    <h3>Michele</h3>
-                    <span>Ultimo accesso oggi alle 10.35</span>
+                    <h3>{{contacts[accountIndex].name}}</h3>
+                    <span>Ultimo accesso oggi alle 10:35</span>
                 </div>
                 <div class="items-main">
                     <i class="fas fa-search icon"></i>
@@ -95,32 +96,17 @@
                     <i class="fas fa-ellipsis-v icon"></i>
                 </div>
             </div>
-            <div class="main-content">
-                <div class="message-ctn">
-                    <!-- right -->
-                    <div class="right-message">
-                        <div class="message user">
-                            <h3>Messaggio ricevuto</h3>
-                            <span class="data">
-                                10/01/2021 15:50:00
-                            </span>
-                        </div>
-                    </div>
-                    <!-- left -->
-                    <div class="left-message">
-                        <div class="message m-contact">
-                            <h3>Messaggio inviato</h3>
-                            <span class="data">
-                                10/01/2021 15:50:00
-                            </span>
-                        </div>
-                    </div>
+
+            <section class="message-ctn">
+                <div v-for="(message, index) in contacts[accountIndex].messages" class="message" :class="message.status">
+                    <div class="sent">{{message.text}}</div>
+                    <div class="data">{{message.date}}</div>
                 </div>
-            </div>
+            </section>
 
             <div class="main-footer">
                 <i class="far fa-smile icon-f"></i>
-                <input 
+                <input @keyup.enter = "sendMessage();" v-model ="newmessage"
                 class="input-message"
                 type="text"
                 placeholder="Scrivi un nuovo messaggio"

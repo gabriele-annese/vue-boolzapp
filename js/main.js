@@ -89,5 +89,21 @@ const app = new Vue({
                 ],
             },
         ],
-    } 
+        accountIndex: 0,
+        newmessage: "",
+    },
+    methods: {
+        genAccount(index){
+            this.accountIndex = index
+            console.log(accountIndex)
+        },
+        sendMessage(){
+            this.contacts[this.accountIndex].messages.push({
+                text: this.newmessage,
+                status: 'sent',
+                date : "10/01/2020 15:30:55"
+            });
+            this.newmessage = "";
+        }
+    },
 })
