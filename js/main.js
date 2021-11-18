@@ -99,7 +99,7 @@ const app = new Vue({
         },
          //**************//
         sendMessage(){
-            if(this.newmessage > 0){
+            if(this.newmessage.length > 0){
                 this.contacts[this.accountIndex].messages.push({
                     text: this.newmessage,
                     status: 'sent',
@@ -110,16 +110,13 @@ const app = new Vue({
         },
         //**************//
         sendBot(){
-            if(this.newmessage > 0){
-
-                setTimeout(()=> {
-                    this.contacts[this.accountIndex].messages.push({
-                        text: 'perfetto',
-                        status: 'received',
-                        date : dayjs().format('DD/MM/YYYY HH:mm:ss')
-                    },);
-                },1000)
-            }
+            setTimeout(()=> {
+                this.contacts[this.accountIndex].messages.push({
+                    text: 'perfetto',
+                    status: 'received',
+                    date : dayjs().format('DD/MM/YYYY HH:mm:ss')
+                },);
+            },100)
          },
          //**************//
         searchContact() {
@@ -130,7 +127,8 @@ const app = new Vue({
                     this.contacts[i].visible = true;
                 }
             }
-        }
+        },
+
     },
 
 })
