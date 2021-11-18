@@ -92,30 +92,42 @@ const app = new Vue({
         accountIndex: 0,
         botIndex: 0,
         newmessage: "",
+        search: "",
     },
     methods: {
         genAccount(index){
             this.accountIndex = index
-            console.log(accountIndex)
         },
          //**************//
         sendMessage(){
-            this.contacts[this.accountIndex].messages.push({
-                text: this.newmessage,
-                status: 'sent',
-                date : dayjs().format('DD/MM/YYYY HH:mm:ss')
-            });
-            this.newmessage = "";
+            if(this.newmessage > 0){
+                this.contacts[this.accountIndex].messages.push({
+                    text: this.newmessage,
+                    status: 'sent',
+                    date : dayjs().format('DD/MM/YYYY HH:mm:ss')
+                });
+                this.newmessage = "";
+            }
         },
         //**************//
         sendBot(){
-            setTimeout(()=> {
-                this.contacts[this.accountIndex].messages.push({
-                    text: 'perfetto',
-                    status: 'received',
-                    date : dayjs().format('DD/MM/YYYY HH:mm:ss')
-                },);
-            },1000)
+            if(this.newmessage > 0){
+
+                setTimeout(()=> {
+                    this.contacts[this.accountIndex].messages.push({
+                        text: 'perfetto',
+                        status: 'received',
+                        date : dayjs().format('DD/MM/YYYY HH:mm:ss')
+                    },);
+                },1000)
+            }
+         },
+         //**************//
+         searchContact(){
+            if(this.search === this.contacts[this.accountIndex].name){
+                console.log(ok)
+            }
          },
     },
+
 })

@@ -61,7 +61,7 @@
                         <i class="fas fa-search icon"></i>
                     </div>
                 </button>
-                <input 
+                <input v-model = "search"
                 type="search"
                 placeholder="Cerca o inizia una nuova conversazione"
                 >
@@ -83,8 +83,7 @@
         <!-- right -->
         <section class="main">
             <div class="main-header">
-                <div v-for = "contacts.img"
-                    class="img-profile ">
+                <div class="img-profile ">
                     <img  :src="`./img/avatar${contacts[accountIndex].avatar}.jpg`" alt="">
                 </div>
                 <div class="name-main">
@@ -107,7 +106,7 @@
 
             <div class="main-footer">
                 <i class="far fa-smile icon-f"></i>
-                <input @keyup.enter = "sendMessage(); sendBot()" v-model ="newmessage"
+                <input @keyup.enter = "sendMessage(); sendBot()" v-model.trim ="newmessage"
                 class="input-message"
                 type="text"
                 placeholder="Scrivi un nuovo messaggio"
