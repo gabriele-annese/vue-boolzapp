@@ -62,6 +62,7 @@
                     </div>
                 </button>
                 <input v-model = "search"
+                @keyup = "searchContact()"
                 type="search"
                 placeholder="Cerca o inizia una nuova conversazione"
                 >
@@ -70,7 +71,9 @@
             <div class="contacts-bar">
                 <ul  v-for= "(contact, index) in contacts" @click="genAccount(index)"
                 :class = "{active: accountIndex === index}"
-                class="contact">
+                class="contact"
+                v-show = "contacts[index].visible"
+                >
                     <li  class="img-profile">
                         <img :src="`./img/avatar${contacts[index].avatar}.jpg`" alt="">
                     </li>

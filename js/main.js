@@ -90,7 +90,6 @@ const app = new Vue({
             },
         ],
         accountIndex: 0,
-        botIndex: 0,
         newmessage: "",
         search: "",
     },
@@ -123,11 +122,15 @@ const app = new Vue({
             }
          },
          //**************//
-         searchContact(){
-            if(this.search === this.contacts[this.accountIndex].name){
-                console.log(ok)
+        searchContact() {
+            for (let i = 0; i < this.contacts.length; i++) {
+                if (!this.contacts[i].name.toLowerCase().includes(this.search.toLowerCase())) {
+                    this.contacts[i].visible = false;
+                } else {
+                    this.contacts[i].visible = true;
+                }
             }
-         },
+        }
     },
 
 })
