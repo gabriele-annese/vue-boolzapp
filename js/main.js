@@ -90,6 +90,7 @@ const app = new Vue({
             },
         ],
         accountIndex: 0,
+        botIndex: 0,
         newmessage: "",
     },
     methods: {

@@ -69,6 +69,7 @@
             <!-- contact-bar -->
             <div class="contacts-bar">
                 <ul  v-for= "(contact, index) in contacts" @click="genAccount(index)"
+                :class = "{active: accountIndex === index}"
                 class="contact">
                     <li  class="img-profile">
                         <img :src="`./img/avatar${contacts[index].avatar}.jpg`" alt="">
